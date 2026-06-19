@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAF8F5;
+  --foreground: #2F3E2C;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Paleta de Colores Inspirada en el Logo */
+  --color-cream-light: #f7f7f7;
+  --color-cream-dark: #F4EFE6;
+  --color-sage: #6E7E6B;
+  --color-sage-light: #F0F3EF;
+  --color-sage-dark: #515E4F;
+  --color-blush: #E5A9A7;
+  --color-blush-light: #F8ECEC;
+  --color-burgundy: #8B2635;
+  --color-burgundy-dark: #5A1822;
+  --color-text-dark: #2F3E2C;
+  --color-text-muted: #5E6D58;
+
+  /* Tipografías */
+  --font-heading: var(--font-heading), "Playfair Display", serif;
+  --font-body: var(--font-body), "Inter", sans-serif;
+  --font-cormorant: "Cormorant Garamond", serif;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Clases de Utilidad de Marca y Animaciones Sutiles */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float 12s ease-in-out infinite;
+}
+
+/* Efectos de Revelado al Desplazar */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Curvas Orgánicas Personalizadas para Tarjetas */
+.organic-card-1 {
+  border-radius: 40px 10px 40px 10px;
+}
+
+.organic-card-2 {
+  border-radius: 10px 40px 10px 40px;
+}
+
+.organic-card-round {
+  border-radius: 50px 50px 30px 30px;
 }
