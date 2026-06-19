@@ -21,6 +21,7 @@ import {
   Compass
 } from "lucide-react";
 
+import { basePath } from "@/lib/basePath";
 import Navbar from "@/components/Navbar";
 import FAQAccordion from "@/components/FAQAccordion";
 import TestimonialSlider from "@/components/TestimonialSlider";
@@ -204,7 +205,7 @@ export default function Home() {
                 {/* Contenedor circular con el logotipo */}
                 <div className="absolute inset-4 rounded-full overflow-hidden bg-cream-light border-2 border-sage-light shadow-xl flex items-center justify-center">
                   <Image
-                    src="/logo.jpeg"
+                    src={`${basePath}/logo.jpeg`}
                     alt="Logo Carolina Romero Psicóloga Clínica"
                     width={400}
                     height={400}
@@ -237,7 +238,7 @@ export default function Home() {
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-gradient-to-tr from-sage-dark to-sage text-white">
                       {/* Comentario 2: Imagen de marca/identidad visual secundaria dentro del perfil sobre mí */}
                       <Image
-                        src="/logo.jpeg"
+                        src={`${basePath}/logo.jpeg`}
                         alt="Logotipo e Identidad Carolina Romero"
                         width={180}
                         height={180}
